@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --fonts: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --mono-fonts: "Inconsolata", Courier, monospace;
+  --text-color: #28282d;
+  --background-color: #efefd8;
+}
+
+body {
+  font-family: var(--fonts);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+* {
+  font-family: var(--fonts);
+  font-size: 1em;
+  font-weight: 400;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+form {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 0.125em solid;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.2em;
+}
+
+#main {
+  border-bottom: 0.0625em solid;
+  padding-bottom: 0.5em;
+}
+
+#uicell {
+  width: 25em;
+}
+
+#uicell th {
+  color: black;
+  width: auto;
+  text-align: right;
+  padding-right: 0.5em;
+  border: 0.0625em solid black;
+  border-width: 0 0.0625em 0.0625em 0;
+}
+
+#uicell td {
+  padding: 0 0 0 0.5em;
+}
+
+#uicell td.pal {
+  padding: 0 3em;
+}
+
+#uicell #gobuttons td {
+  height: 1.5em;
+}
+
+input,
+#input a {
+  font-family: var(--mono-fonts);
+  font-size: 0.85em;
+}
+
+#input,
+#output {
+  margin: 0 0 1em;
+}
+
+#input td {
+  white-space: nowrap;
+}
+
+#input a {
+  border: 0.125em outset silver;
+  background: silver;
+  padding: 0.0625em 0.125em;
+  cursor: pointer;
+}
+
+#input .coltype {
+  background: #eee;
+  border-style: inset;
+}
+
+#output input {
+  border: 0.125em solid white;
+  border-width: 0 0.125em;
+}
+
+#output td.text {
+  border-bottom: 0.0625em dotted silver;
+}
+
+#watercell {
+  background: #c0c0c07f;
+  height: auto;
+  width: fit-content;
+  padding: 0;
+}
+
+#grid {
+  background: black;
+  border: 0.0625em solid black;
+  border-width: 0 0.0625em 0.0625em 0;
+  margin: 0.3125em 0.25em;
+}
+
+#grid td {
+  height: 0.6875em;
+  width: 0.6875em;
+  padding: 0;
+  line-height: 0.6875em;
+}
+
+#grid td a {
+  display: block;
+  height: 0.625em;
+  width: 0.625em;
+  line-height: 0.625em;
+  border: 0.0625em solid black;
+  border-width: 0.0625em 0 0 0.0625em;
+}
+
+#textcell p {
+  margin: 0;
+  padding: 0 1em 1em 1.5em;
+}
+
+#footer {
+  color: #999;
+  font-style: italic;
+}
+
+#footer p {
+  margin: 0 0 1em 0;
+}
+
+#footer img {
+  float: right;
+  margin: 0 0 0.5em 2em;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+main {
+  width: min(100ch, calc(100% - 4rem));
+  margin-inline: auto;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #28282d;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  text-align: center;
+  color: #28282d;
+  font-weight: 500;
+}
+
+strong {
+  font-weight: 500;
+}
+
+p {
+  text-align: justify;
+  font-weight: 300;
+  color: #28282d;
+}
+
+option {
+  font-family: var(--mono-fonts);
+  font-size: 1em;
+}
