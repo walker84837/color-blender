@@ -67,14 +67,13 @@ h1 {
   height: 1.5em;
 }
 
-input,
-#input a {
+input, #input a {
   font-family: var(--mono-fonts);
+  background-color: #4D4D4D;
   font-size: 0.85em;
 }
 
-#input,
-#output {
+#input, #output {
   margin: 0 0 1em;
 }
 
@@ -105,7 +104,7 @@ input,
 
 #watercell {
   background: #c0c0c07f;
-  height: auto;
+  height: fit-content;
   width: fit-content;
   padding: 0;
 }
@@ -136,20 +135,6 @@ input,
 #textcell p {
   margin: 0;
   padding: 0 1em 1em 1.5em;
-}
-
-#footer {
-  color: #999;
-  font-style: italic;
-}
-
-#footer p {
-  margin: 0 0 1em 0;
-}
-
-#footer img {
-  float: right;
-  margin: 0 0 0.5em 2em;
 }
 
 html {
@@ -192,4 +177,10 @@ p {
 option {
   font-family: var(--mono-fonts);
   font-size: 1em;
+}
+
+footer, footer a {
+	color: var(--text-color);
+  text-align: center;
+  padding: 20px;
 }
