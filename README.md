@@ -15,7 +15,7 @@ Changes Made:
 - Moved the JavaScript files to separate files;
 - Restyled the website to be dark theme.
 
-This rewritten program is released under the [Unlicense](https://unlicense.org). You can find the full text of the Unlicense in the [LICENSE](LICENSE) file.
+This rewritten program is released under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html). You can find the full text of the Unlicense in the [LICENSE](LICENSE) file.
 
 The original program, [Eric's color blender](https://meyerweb.com/eric/tools/color-blend), was released under the Creative Commons Attribution-ShareAlike 1.0 license. You can find more information about the original license at [https://creativecommons.org/licenses/by-sa/1.0/](https://creativecommons.org/licenses/by-sa/1.0/).
 
