@@ -11,11 +11,11 @@ This program is a rewritten version of [Eric's color blender](https://meyerweb.c
 Changes Made:
 
 - Modernized the HTML;
-- Added graceful error handling in JS;
-- Moved script files from inside the HTML to separate files;
-- Changed the styling.
+- Rewrote the website in TypeScript, adding better error handling;
+- Moved the JavaScript files to separate files;
+- Restyled the website to be dark theme.
 
-This rewritten program is released under the [Unlicense](LICENSE). You can find the full text of the Unlicense in the [LICENSE](LICENSE) file.
+This rewritten program is released under the [Unlicense](https://unlicense.org). You can find the full text of the Unlicense in the [LICENSE](LICENSE) file.
 
 The original program, [Eric's color blender](https://meyerweb.com/eric/tools/color-blend), was released under the Creative Commons Attribution-ShareAlike 1.0 license. You can find more information about the original license at [https://creativecommons.org/licenses/by-sa/1.0/](https://creativecommons.org/licenses/by-sa/1.0/).
 
@@ -32,3 +32,4 @@ Anyone can freely contribute to the color-blender project. If you'd like to cont
 3. Use the color blender tool to blend colors and generate palettes.
 
 We welcome any improvements, bug fixes, or new features that you may want to contribute. Please submit your contributions as pull requests.
+
