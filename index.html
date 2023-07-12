@@ -1,193 +1,112 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Color Blender</title>
-  <script src="script.js"></script>
-  <link rel="stylesheet" href="style.css" />
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Color Blender</title>
+	<link rel="stylesheet" href="style.css" />
 </head>
 
-<body onload="init('hex');">
-  <main>
-    <form onsubmit="return false;">
-      <h1>Color Blender</h1>
+<body>
+	<main>
+		<h1>Color Blender</h1>
+		<p>This is a simple color blender written in TypeScript. Just provide two <strong>valid</strong> hex colors, and the number of midpoints, and click "Blend" to blend the colors.</p>
+		<p style="text-align: center;"><strong>Please provide the two hex colors:</strong></p>
+		<form onsubmit="drawPalette(event);">
+			<div class="color-row">
+				<input type="text" id="input0" />
+				<div class="palette" id="c0"></div>
+			</div>
 
-      <table id="main">
-        <tbody>
-          <tr valign="top">
-            <td id="uicell">
-              <table id="input">
-                <tbody>
-                  <tr>
-                    <th>Color format</th>
-                    <td colspan="2">
-                      <a onclick="setType('hex');" id="hex" class="coltype">Hex</a>
-                      <a onclick="setType('rgbd');" id="rgbd" class="">RGB</a>
-                      <a onclick="setType('rgbp');" id="rgbp" class="">RGB%</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th id="l1">1st Color</th>
-                    <td class="col">
-                      <input type="text" id="col0" onblur="colorStore('0');" onfocus="setCursor(0);" />
-                    </td>
-                    <td class="pal" id="c0">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th id="l2">2nd Color</th>
-                    <td class="col">
-                      <input type="text" id="col1" onblur="colorStore('1');" onfocus="setCursor(1);" />
-                    </td>
-                    <td class="pal" id="c1">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th>Midpoints</th>
-                    <td>
-                      <select id="steps" onchange="updateHash();">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr id="gobuttons">
-                    <td></td>
-                    <td>
-                      <a onclick="drawPalette();">blend</a>
-                    </td>
-                    <td><a onclick="init(0);">clear</a></td>
-                  </tr>
-                </tbody>
-              </table>
+			<div class="color-row">
+				<input type="text" id="input1" />
+				<div class="palette" id="c1"></div>
+			</div>
+			<br>
+			<label for="steps">Midpoints</label>
+			<select id="steps">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>
+			<br>
+			<button onclick="drawPalette();">Blend</button>
+			<br>
 
-              <table id="output">
-                <tbody>
-                  <tr>
-                    <th>Palette</th>
-                    <td class="text">
-                      <input type="text" id="pal0" />
-                    </td>
-                    <td class="pal" id="p0">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="text">
-                      <input type="text" id="pal1" />
-                    </td>
-                    <td class="pal" id="p1">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="text">
-                      <input type="text" id="pal2" />
-                    </td>
-                    <td class="pal" id="p2">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="text">
-                      <input type="text" id="pal3" />
-                    </td>
-                    <td class="pal" id="p3">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="text">
-                      <input type="text" id="pal4" />
-                    </td>
-                    <td class="pal" id="p4">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="text">
-                      <input type="text" id="pal5" />
-                    </td>
-                    <td class="pal" id="p5">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="text">
-                      <input type="text" id="pal6" />
-                    </td>
-                    <td class="pal" id="p6">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="text">
-                      <input type="text" id="pal7" />
-                    </td>
-                    <td class="pal" id="p7">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="text">
-                      <input type="text" id="pal8" />
-                    </td>
-                    <td class="pal" id="p8">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="text">
-                      <input type="text" id="pal9" />
-                    </td>
-                    <td class="pal" id="p9">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="text">
-                      <input type="text" id="pal10" />
-                    </td>
-                    <td class="pal" id="p10">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="text">
-                      <input type="text" id="pal11" />
-                    </td>
-                    <td class="pal" id="p11">&nbsp;</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td id="watercell">
-              <script src="watercell.js"></script>
-            </td>
-            <td id="textcell">
-              <p>
-                Please follow these steps to use the color blender tool
-                effectively: choose a <strong>valid</strong> color value.
-                Enter two valid CSS color values in the chosen format. Select
-                the number of midpoints you want to see. The palette will
-                display the colors you entered, along with the requested
-                number of midpoint colors and their corresponding values. Note
-                that all numbers are rounded to the nearest integer. To apply
-                a color value to the highlighted input, click on the
-                corresponding square in the "waterfall" display. If needed,
-                you can switch between different value formats, and the tool
-                will automatically translate the existing values to the new
-                format. To clear all values and colors, click the "Clear"
-                button. Please note that this action does not change the
-                current value format.
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
+			<h2>Palette</h2>
+			<div id="output">
+				<div class="color-row"></div>
+				<input type="text" id="pal0" readonly />
+				<div class="palette" id="p0"></div>
+			</div>
 
-    <footer><a href="https://walker84837.github.io/">Main page</a></footer>
-  </main>
+			<div class="color-row">
+				<input type="text" id="pal1" readonly />
+				<div class="palette" id="p1"></div>
+			</div>
+
+			<div class="color-row">
+				<input type="text" id="pal2" readonly />
+				<div class="palette" id="p2"></div>
+			</div>
+
+			<div class="color-row">
+				<input type="text" id="pal3" readonly />
+				<div class="palette" id="p3"></div>
+			</div>
+
+			<div class="color-row">
+				<input type="text" id="pal4" readonly />
+				<div class="palette" id="p4"></div>
+			</div>
+
+			<div class="color-row">
+				<input type="text" id="pal5" readonly />
+				<div class="palette" id="p5"></div>
+			</div>
+
+			<div class="color-row">
+				<input type="text" id="pal6" readonly />
+				<div class="palette" id="p6"></div>
+			</div>
+
+			<div class="color-row">
+				<input type="text" id="pal7" readonly />
+				<div class="palette" id="p7"></div>
+			</div>
+
+			<div class="color-row">
+				<input type="text" id="pal8" readonly />
+				<div class="palette" id="p8"></div>
+			</div>
+
+			<div class="color-row">
+				<input type="text" id="pal9" readonly />
+				<div class="palette" id="p9"></div>
+			</div>
+
+			<div class="color-row">
+				<input type="text" id="pal10" readonly />
+				<div class="palette" id="p10"></div>
+			</div>
+			<div class="color-row">
+				<input type="text" id="pal11" readonly />
+				<div class="palette" id="p11"></div>
+			</div>
+			</div>
+			<script src="script.js"></script>
+		</form>
+	</main>
+	<footer><a href="https://walker84837.github.io/">Main page</a></footer>
 </body>
 
 </html>
