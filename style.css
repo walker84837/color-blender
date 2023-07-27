@@ -106,3 +106,9 @@ strong {
 ::selection {
   background-color: #09090b7f;
 }
+
+@media screen and (max-width: 660px) {
+  input[type="text"], input {
+    width: 5em; /* Set the desired width for 660 pixels or less */
+  }
+}
