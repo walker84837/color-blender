@@ -1,35 +1,32 @@
 # color-blender
 
-A simple color blender website.
+![Licensed under GNU GPLv3](https://img.shields.io/badge/license-GNU%20GPLv3-blue.svg)
 
----
+A simple web-based color blender.
 
-## Disclaimers
+## Table of Contents
 
-This program is a rewritten version of [Eric's color blender](https://meyerweb.com/eric/tools/color-blend), originally released under the [Creative Commons Attribution-ShareAlike 1.0 license](https://creativecommons.org/licenses/by-sa/1.0/).
-
-Changes Made:
-
-- Modernized the HTML;
-- Rewrote the website in TypeScript, adding better error handling;
-- Moved the JavaScript files to separate files;
-- Restyled the website to be dark theme.
-
-This rewritten program is released under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html). You can find the full text of the GPLv3 in the [LICENSE](LICENSE) file.
-
-The original program, [Eric's color blender](https://meyerweb.com/eric/tools/color-blend), was released under the Creative Commons Attribution-ShareAlike 1.0 license. You can find more information about the original license at [https://creativecommons.org/licenses/by-sa/1.0/](https://creativecommons.org/licenses/by-sa/1.0/).
-
-This program is not affiliated with or endorsed by the original program's authors or maintainers.
-
----
+1.  [Contributing](#contributing)
+2.  [License](#license)
+3.  [Acknowledgements](#acknowledgements)
 
 ## Contributing
 
-Anyone can freely contribute to the color-blender project. If you'd like to contribute, follow these steps to clone the repository:
+Anyone can freely contribute to the color-blender project. If you'd like to contribute,
 
-1. Clone the repository: `git clone https://github.com/walker84837/color-blender.git`
-2. Open the `index.html` file in a web browser.
-3. Use the color blender tool to blend colors and generate palettes.
+1.  Follow the Linux kernel coding guidelines[^1].
+2.  Follow the [code of conduct](CODE_OF_CONDUCT.md).
+3.  If you're proposing changes, feel free to open an issue.
+4.  If implementing anything (let it be, a new algorithm, for instance), the
+    code, make it so it solves the problem, or task more efficiently, instead
+    of looking solely for the "fastest" one.
 
-We welcome any improvements, bug fixes, or new features that you may want to contribute. Please submit your contributions as pull requests.
+[^1]: <https://docs.kernel.org/process/coding-style.html>
 
+## License
+
+This project is released under the [GNU GPLv3](LICENSE.md)
+
+## Acknowledgements
+
+This project is inspired by [Eric A. Meyer's color blender](https://meyerweb.com/eric/tools/color-blend).
