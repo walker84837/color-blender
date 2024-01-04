@@ -1,114 +1,124 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 :root {
-  --fonts: "Roboto", sans-serif, system-ui;
-  --mono-fonts: "Inconsolata", monospace, system-ui;
-  --text-color: #efefd7;
-  --background-color: #29292e;
-  --txt-background-color: #424244;
-  --border-color: #363639;
-  --spacing: 1.5rem;
+	--fonts: 'Roboto', system-ui, sans-serif;
+	--mono-fonts: 'Inconsolata', monospace, system-ui;
+	--text-color: #efefd7;
+	--background-color: #29292e;
+	--txt-background-color: #424244;
+	--border-color: #363639;
+	--spacing: 1.5rem;
 }
 
 * {
-  font-family: var(--fonts);
-  font-weight: 300;
-  text-align: center;
-  font-size: 1em;
-  color: var(--text-color);
+	font-family: var(--fonts);
+	font-weight: 300;
+	text-align: center;
+	font-size: 1em;
+	color: var(--text-color);
 }
 
+html,
 body {
-  background-color: var(--background-color);
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+
+
+body {
+	background-color: var(--background-color);
+	display: flex;
+	flex-direction: column;
 }
 
 main {
-  width: min(100ch, calc(100% - 4rem));
-  margin-inline: auto;
-  padding: var(--spacing);
+	width: min(100ch, calc(100% - 4rem));
+	margin-inline: auto;
+	padding: var(--spacing);
+	flex: 1;
 }
 
 h1 {
-  font-weight: 900;
-  font-size: 2em;
+	font-weight: 900;
+	font-size: 2em;
 }
 
 h2 {
-  font-weight: 700;
-  font-size: 1.75em;
+	font-weight: 700;
+	font-size: 1.75em;
+}
+
+input,
+footer,
+select,
+button {
+	background-color: var(--txt-background-color);
+	border-color: var(--border-color);
+	border-radius: .5em;
 }
 
 input {
-  width: 10%;
-  font-family: var(--mono-fonts);
-  background-color: var(--txt-background-color);
-  border-color: var(--border-color);
-  border-radius: .5em;
-}
-
-select {
-  background-color: var(--txt-background-color);
-  border-color: var(--border-color);
-  border-radius: .5em;
+	width: 10%;
+	font-family: var(--mono-fonts);
+	font-weight: 400;
 }
 
 button {
-  background-color: var(--txt-background-color);
-  border-color: var(--border-color);
-  border-radius: .5em;
-  margin-top: var(--spacing);
-  margin-bottom: .5rem;
+	margin-top: var(--spacing);
+	margin-bottom: .5rem;
 }
 
 footer {
-  text-align: center;
-  padding: var(--spacing);
-  font-size: 0.875em;
-  background-color: #1414177f;
+	text-align: center;
+	padding: var(--spacing);
+	font-size: 0.875em;
+	background-color: #1414177f;
 }
 
 a {
-  color: #efefd7;
-  text-decoration: underline;
-  transition: color 200ms ease-in-out;
+	color: #efefd7;
+	text-decoration: underline;
+	transition: color 200ms ease-in-out;
 }
 
 a:hover {
-  text-decoration: underline;
-  color: hsl(205, 70%, 60%);
+	text-decoration: underline;
+	color: hsl(205, 70%, 60%);
 }
 
 p {
-  text-align: justify;
+	text-align: justify;
 }
 
 strong {
-  font-weight: 500;
+	font-weight: 500;
 }
 
 .palette {
-  display: inline-block;
-  vertical-align: middle;
-  width: 1.75em;
-  height: 1.75em;
+	display: inline-block;
+	vertical-align: middle;
+	width: 1.75em;
+	height: 1.75em;
 }
 
 .palette input[type="text"] {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: var(--spacing);
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: var(--spacing);
 }
 
 .output {
-  display: flex;
+	display: flex;
 }
 
 ::selection {
-  background-color: #09090b7f;
+	background-color: #09090b7f;
 }
 
 @media screen and (max-width: 660px) {
-  input[type="text"], input {
-    width: 5em; /* Set the desired width for 660 pixels or less */
-  }
+	input[type="text"], input {
+		width: 5em;
+	}
 }
