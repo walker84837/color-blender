@@ -1,116 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Color Blender</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Blender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-	<body>
-		<main>
-			<h1>Color Blender</h1>
-			<p>This is a simple color blender written in TypeScript. Just provide two
-			<strong>valid</strong> hex colors, and the number of midpoints, and click
-			"Blend" to blend the colors.</p>
-			<p style="text-align: center;"><strong>Please provide the two hex colors:
-			</strong></p>
+<body>
+    <main>
+            <h1>Color Blender</h1>
+            <p class="description">This website is inspired by Eric Meyer's <a href="https://meyerweb.com/eric/tools/color-blend">color blender</a> website, which I didn't like
+                because of how "old" it looked like.</p>
 
-			<form onsubmit="draw_palette(event);" id="colors">
-				<div class="color-row">
-					<input type="text" id="input0" />
-					<div class="palette" id="c0"></div>
-				</div>
+            <form id="colorForm" class="form-container">
+                <div class="input-group">
+                    <div class="color-input">
+                        <input type="text" id="color1" class="input-field" placeholder="#RRGGBB">
+                        <div class="color-preview" id="preview1"></div>
+                    </div>
+                    <div class="color-input">
+                        <input type="text" id="color2" class="input-field" placeholder="#RRGGBB">
+                        <div class="color-preview" id="preview2"></div>
+                    </div>
+                </div>
 
-				<div class="color-row">
-					<input type="text" id="input1" />
-					<div class="palette" id="c1"></div>
-				</div>
-				<br>
-				<label for="steps">Midpoints</label>
-				<select id="steps">
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
-				</select>
-				<br>
-				<button onclick="draw_palette(event);">Blend</button>
-				<br>
+                <div class="controls">
+                    <div class="select-group">
+                        <label for="steps">Midpoints:</label>
+                        <select id="steps" class="select-field">
+                            <option value="1">1</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
 
-				<h2>Palette</h2>
-				<div id="output">
-					<div class="color-row"></div>
-					<input type="text" id="pal0" readonly />
-					<div class="palette" id="p0"></div>
-				</div>
+                    <div class="button-group">
+                        <button type="button" id="blendBtn" class="btn primary">Blend</button>
+                        <button type="button" id="clearBtn" class="btn secondary">Clear</button>
+                    </div>
+                </div>
 
-				<div class="color-row">
-					<input type="text" id="pal1" readonly />
-					<div class="palette" id="p1"></div>
-				</div>
+                <div class="palette-container">
+                    <h2>Color Palette</h2>
+                    <div id="paletteOutput" class="palette-grid"></div>
+                </div>
+            </form>
+    </main>
 
-				<div class="color-row">
-					<input type="text" id="pal2" readonly />
-					<div class="palette" id="p2"></div>
-				</div>
-
-				<div class="color-row">
-					<input type="text" id="pal3" readonly />
-					<div class="palette" id="p3"></div>
-				</div>
-
-				<div class="color-row">
-					<input type="text" id="pal4" readonly />
-					<div class="palette" id="p4"></div>
-				</div>
-
-				<div class="color-row">
-					<input type="text" id="pal5" readonly />
-					<div class="palette" id="p5"></div>
-				</div>
-
-				<div class="color-row">
-					<input type="text" id="pal6" readonly />
-					<div class="palette" id="p6"></div>
-				</div>
-
-				<div class="color-row">
-					<input type="text" id="pal7" readonly />
-					<div class="palette" id="p7"></div>
-				</div>
-
-				<div class="color-row">
-					<input type="text" id="pal8" readonly />
-					<div class="palette" id="p8"></div>
-				</div>
-
-				<div class="color-row">
-					<input type="text" id="pal9" readonly />
-					<div class="palette" id="p9"></div>
-				</div>
-
-				<div class="color-row">
-					<input type="text" id="pal10" readonly />
-					<div class="palette" id="p10"></div>
-				</div>
-				<div class="color-row">
-					<input type="text" id="pal11" readonly />
-					<div class="palette" id="p11"></div>
-				</div>
-				</div>
-				<script src="script.js"></script>
-			</form>
-		</main>
-		<footer><a href="https://walker84837.github.io/">Main page</a></footer>
-	</body>
+    <footer>
+        <a href="https://walker84837.github.io/" class="footer-link">Main page</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
 
 </html>
