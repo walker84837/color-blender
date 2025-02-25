@@ -1,32 +1,36 @@
-# color-blender
+# Color Blender
 
-![Licensed under GNU GPLv3](https://img.shields.io/badge/license-GNU%20GPLv3-blue.svg)
+![Licensed under MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
-A simple web-based color blender.
+> A simple web-based color blender that allows you to explore and experiment with color combinations.
 
 ## Table of Contents
 
-1.  [Contributing](#contributing)
-2.  [License](#license)
-3.  [Acknowledgements](#acknowledgements)
+1. [Contributing](#contributing)
+2. [Roadmap](#roadmap)
+3. [License](#license)
+4. [Acknowledgements](#acknowledgements)
 
 ## Contributing
 
-Anyone can freely contribute to the color-blender project. If you'd like to contribute,
+Contributions to this project are welcome and encouraged! If you'd like to get involved, please follow these guidelines:
 
-1.  Follow the Linux kernel coding guidelines[^1].
-2.  Follow the [code of conduct](CODE_OF_CONDUCT.md).
-3.  If you're proposing changes, feel free to open an issue.
-4.  If implementing anything (let it be, a new algorithm, for instance), the
-    code, make it so it solves the problem, or task more efficiently, instead
-    of looking solely for the "fastest" one.
+1. Fork the repository
+2. Create a new branch for your feature or bug fix
+3. Make your changes and commit them
+4. Submit a pull request with a detailed description of your changes
 
-[^1]: <https://docs.kernel.org/process/coding-style.html>
+### Roadmap
 
-## License
+The project roadmap is outlined below. Feel free to contribute ideas or submit issues for any of these items:
 
-This project is released under the [GNU GPLv3](LICENSE.md)
+- [ ] Implement a framework to improve the overall structure and maintainability of the project
+    - [ ] Consider porting the project to a Rust web framework such as [Yew](https://yew.rs/) or [Dioxus](https://dioxuslabs.com/)
 
 ## Acknowledgements
 
-This project is inspired by [Eric A. Meyer's color blender](https://meyerweb.com/eric/tools/color-blend).
+This project is inspired by Eric A. Meyer's [color blender](https://meyerweb.com/eric/tools/color-blend).
+
+## License
+
+This project is released under the [MIT License](LICENSE.md).
